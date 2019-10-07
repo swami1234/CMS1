@@ -1,0 +1,24 @@
+﻿@model List<CMS.Web.ViewModels.MenuViewModel>
+
+@{ 
+    string pageTitle = (string)TempData["PageTitle"];
+
+ }
+
+@foreach(var menu in Model)
+{
+    if (pageTitle == menu.Title)
+{
+
+    <li class="active"><a href="@Url.RouteUrl("Page", new { Slug = menu.Slug })">@menu.Title</a></li>
+
+    }
+
+else
+{
+<li><a href=" @Url.RouteUrl("Page",new { Slug = menu.Slug })">@menu.Title</a></li>
+}
+
+}
+
+

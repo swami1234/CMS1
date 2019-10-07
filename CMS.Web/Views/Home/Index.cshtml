@@ -1,0 +1,19 @@
+﻿@model CMS.Web.ViewModels.PageViewModel
+
+
+@{
+    ViewBag.Title = "ViewBag.PageTitle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1>@ViewBag.PageTitle</h1>
+
+<hr/>
+
+    @Html.Raw(Model.Content)
+
+
+
+

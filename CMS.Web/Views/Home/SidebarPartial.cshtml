@@ -1,0 +1,14 @@
+﻿@model CMS.Web.ViewModels.SidebarViewModel
+    <style>
+        .custom {
+            color: #212121;
+            background-color: #01579b;
+        }
+    </style>
+    <div class=" panel panel-default">
+        <div class=" panel-heading custom" >@Model.Name</div>
+
+        <div class="panel-body">
+        @Html.Raw(Model.Content)
+        </div>
+    </div>

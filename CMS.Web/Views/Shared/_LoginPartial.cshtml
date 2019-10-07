@@ -1,0 +1,22 @@
+﻿
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOut", "Accounts", new { Area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+    {
+        <ul class=" nav navbar-nav navbar-right">
+            <li><a href= "javscript:document.GetElementById('logoutForm').submit();">LogOut</a></li>
+        </ul>
+        if (User.IsInRole("admin"))
+        {
+            <li>@Html.ActionLink("Admin Area", "Index", "Pages", new { Area = "Admin" }, new { target = "_blank" })</li>
+        }
+    }
+}
+else
+{
+    <ul class=" nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Accounts", new { Area = "" }, null)</li>
+        <li>@Html.ActionLink("Login", "Login", "Accounts", new { Area = "" }, null)</li>
+    </ul>
+}
